@@ -62,13 +62,18 @@ const ModalWrapper = () => {
   );
 };
 
-const SpringModal = ({ isOpen, setIsOpen }) => {
+interface SpringModalProps {
+  isOpen: boolean;
+  setIsOpen: (state: boolean) => void;
+}
+
+const SpringModal = ({ isOpen, setIsOpen }: SpringModalProps) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       phno: "",
-      date: null,
+      date: undefined,
       requirements: "",
     },
   });

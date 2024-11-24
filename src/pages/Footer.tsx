@@ -1,4 +1,3 @@
-import { Fade } from "react-awesome-reveal";
 import Images from "@/assets/images";
 
 const Footer = () => {

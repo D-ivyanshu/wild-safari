@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
+interface CardProps {
+  id: number; // Assuming `id` is a numeric value
+  url: string; // Assuming `url` is a string
+  setCards: React.Dispatch<React.SetStateAction<CardData[]>>; // For updating the cards state
+  cards: CardData[]; // Array of card objects
+}
+
+interface CardData {
+  id: number; // Each card has an ID
+  url: string; // Each card has a URL or other properties
+}
+
 const SwipeCards = () => {
   const originalCards = cardData; // Backup of the original card data
   const [cards, setCards] = useState(cardData);
@@ -30,7 +42,7 @@ const SwipeCards = () => {
   );
 };
 
-const Card = ({ id, url, setCards, cards }) => {
+const Card = ({ id, url, setCards, cards }: CardProps) => {
   const x = useMotionValue(0);
   const opacity = useTransform(x, [-150, 0, 150], [0, 1, 0]);
   const rotateRaw = useTransform(x, [-150, 150], [-18, 18]);
