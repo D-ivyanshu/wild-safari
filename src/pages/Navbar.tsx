@@ -121,7 +121,13 @@ const mobileLinkVars = {
     },
   },
 };
-const MobileNavLink = ({ title, href }) => {
+
+interface MobileLink {
+  title: string;
+  href: string;
+}
+
+const MobileNavLink = ({ title, href }: MobileLink) => {
   return (
     <motion.div
       variants={mobileLinkVars}

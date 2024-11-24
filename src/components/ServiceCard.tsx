@@ -1,5 +1,14 @@
 import Images from "@/assets/images";
 
+interface ServiceCardProps {
+  imgLink: string;
+  heading: string;
+  capacity: string;
+  time: string;
+  duration: string;
+  departure: string;
+}
+
 const ServiceCard = ({
   imgLink,
   heading,
@@ -7,7 +16,7 @@ const ServiceCard = ({
   time,
   duration,
   departure,
-}) => {
+}: ServiceCardProps) => {
   return (
     <div className="cursor-pointer group relative flex flex-col my-6 bg-white shadow-md border border-slate-200 rounded-lg w-10/12 hover:shadow-lg transition-shadow duration-300">
       <div className="relative h-60 m-2.5 overflow-hidden bg-black text-white rounded-md">
